@@ -1,2 +1,2 @@
-# etnews
-Criação do projeto
+# React
+Curso Especialista React
