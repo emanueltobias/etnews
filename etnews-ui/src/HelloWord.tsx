@@ -1,5 +1,8 @@
 export default function HelloWord() {
+
+    const name = 'Emanuel';
+
     return <div>
-        <h1>Hello Word !!!</h1>
+        <h1>Hello, { name === 'Emanuel' ? 'Emanuel Jr' : name } !!!</h1>
     </div>
 }
