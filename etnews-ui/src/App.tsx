@@ -1,13 +1,19 @@
+import { useState } from 'react';
 import './App.css';
-import Clock from './Clock';
-import Person from './Person';
+import Post from './components/Post';
+import Sidebar from './components/Sidebar';
 
 function App() {
+  const [post] = useState({
+    title: 'Título maneiro',
+    content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`
+  })
   return (
     <div className="App">
       <header className="App-header">
-        <Clock />
-        <Person />
+       <Sidebar post={post} />
+       <Post post={post} totalComments={21} />
       </header>
     </div>
   );
