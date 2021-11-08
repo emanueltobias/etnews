@@ -14,9 +14,6 @@ function App() {
         <Card align="right" title={"Card"}>
           <Post post={post} totalComments={21} />
         </Card>
-        <Card align="left" title={"Card"}>
-          <Post post={post} totalComments={21} />
-        </Card>
       </header>
     </div>
   );
