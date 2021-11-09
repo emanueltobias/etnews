@@ -25,6 +25,11 @@ class Button extends Component<ButtonProps, ButtonState> {
         }, 5000);
     }
 
+    componentDidUpdate(prevProps: ButtonProps, prevState: ButtonState) {
+        console.log('anterior', prevState)
+        console.log('atual', this.state)
+    }
+
     render() {
         return <button
             onClick={() => {
