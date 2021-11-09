@@ -16,6 +16,15 @@ class Button extends Component<ButtonProps, ButtonState> {
             alreadyClicked: !!props.initializeClicked
         }
     }
+
+    componentDidMount() {
+        setTimeout(() => {
+          this.setState({
+              alreadyClicked: false
+          })  
+        }, 5000);
+    }
+
     render() {
         return <button
             onClick={() => {
