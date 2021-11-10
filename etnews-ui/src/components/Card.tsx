@@ -1,4 +1,4 @@
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, useState } from "react";
 import Button from "./Button";
 import './Card.css'
 import * as C from './Card.styles';
@@ -8,15 +8,19 @@ type CardProps = PropsWithChildren<{
     align?: 'center' | 'left' | 'right'
 }>
 export default function Card(props: CardProps) {
+    const [showButton, setShowButton] = useState(true)
     return <C.Wrapper align={props.align || 'center'}>
         <C.Title>{props.title}</C.Title>
         {props.children}
         <div>
-            <Button
-                onClick={() => console.log('aqui')}
-            >
-                Ver mais
-            </Button>
+            {
+                showButton &&
+                <Button
+                    onClick={() => setShowButton(false)}
+                >
+                    Ver mais
+                </Button>
+            }
         </div>
     </C.Wrapper>
 
