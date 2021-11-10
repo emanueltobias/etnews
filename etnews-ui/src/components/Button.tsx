@@ -20,14 +20,12 @@ class Button extends Component<ButtonProps, ButtonState> {
 
     componentDidMount() {
         const timerId = setInterval(() => {
-            console.log('to rodando')
         }, 5000)
         this.setState({ timerId })
     }
 
     componentWillUnmount() {
-        console.log('Button será desmontado')
-        if(this.state.timerId) {
+        if (this.state.timerId) {
             clearInterval(this.state.timerId)
         }
     }
